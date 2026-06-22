@@ -1,0 +1,81 @@
+Unicode 文件批量重命名工具 - 自定义命名说明
+====================================
+
+主程序：
+
+python batch_rename_gui.py
+
+默认界面语言是 English，可在右上角 Language 下拉框切换语言。
+
+
+命名模板
+--------
+
+模板中可以使用 {n} 表示编号：
+
+{n}
+  生成：1.jpg, 2.png, 3.mp4
+
+photo_
+  生成：photo_1.jpg, photo_2.png
+
+trip_{n}_final
+  生成：trip_1_final.jpg, trip_2_final.png
+
+如果模板中没有 {n}，程序会自动把编号追加到模板末尾。
+
+
+起始编号和补零
+--------------
+
+起始编号输入 1：
+
+photo_1.jpg, photo_2.jpg, photo_3.jpg
+
+起始编号输入 001：
+
+photo_001.jpg, photo_002.jpg, photo_003.jpg
+
+起始编号输入 0001：
+
+photo_0001.jpg, photo_0002.jpg, photo_0003.jpg
+
+
+多语言文件名
+------------
+
+模板和文件名支持 Unicode，因此可以使用中文、日文、法文、德文等多数语言文字，例如：
+
+旅行_{n}
+作品_{n}_final
+été_{n}
+reise_{n}
+写真_{n}
+
+为了保证跨平台兼容，模板不能包含这些不安全字符：
+
+< > : " / \ | ? *
+
+
+命令行用法
+----------
+
+预览并确认：
+
+python rename_images_simple.py "C:\path\to\folder" --template "photo_" --start 001
+
+跳过确认：
+
+python rename_images_simple.py "C:\path\to\folder" --template "{n}" --yes
+
+指定命令行语言：
+
+python rename_images_simple.py --language zh
+
+
+安全说明
+--------
+
+程序会先把文件移动到临时名称，再改为最终名称，以减少重名冲突。如果过程中失败，会尽量回滚已移动的文件。
+
+批量操作前仍然建议备份重要文件。
