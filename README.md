@@ -1,16 +1,18 @@
 # Unicode Batch Renamer
 
-Recommended GitHub repository name: `unicode-batch-renamer`
-
-Recommended GitHub description:
-
-> No-dependency Python GUI/CLI for safely batch-renaming image and video files with Unicode templates and a multilingual interface.
-
 A small Python tool for safely batch-renaming image and video files. It uses a
 two-step rename process so existing names such as `1.jpg` or `2.png` do not
 collide with the final output names.
 
+> Built with AI coding models. Designed from real workflow problems.
+
+## Screenshots
+
 ![Unicode Batch Renamer screenshot](docs/screenshot-main.png)
+
+## Download
+
+Download source archives and future packaged builds from [GitHub Releases](https://github.com/mococouo/unicode-batch-renamer/releases), or run directly from this repository with Python.
 
 ## Features
 
@@ -108,10 +110,3 @@ Always back up important files before bulk renaming. The tool performs a
 temporary rename phase first and tries to roll back if an error occurs, but no
 bulk file operation can guarantee recovery from every filesystem or permission
 failure.
-
-## GitHub Release Checklist
-
-- Add screenshots of the GUI in English and at least one translated language
-- Create a short release zip that includes the Python files and Windows batch
-  launchers
-- If you package an `.exe`, keep the Python source visible in the repository
